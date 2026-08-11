@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
   const translations = {
     vi: {
       heroTitle: 'Kiến tạo sự độc bản',
-      heroSubtitle: 'Nơi không gian trở thành di sản',
+      heroSubtitle: 'Nơi không gian hóa thành di sản',
       heroCTA: 'Khám phá dự án',
       heroCTA2: 'Liên hệ ngay',
       servicesTitle: 'Dịch vụ của chúng tôi',
