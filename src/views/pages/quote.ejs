@@ -1,0 +1,146 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Quote Form Section -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="reveal">
+      <h2 style="text-align: center; margin-bottom: var(--space-8);"><%= t.formTitle %></h2>
+
+      <form action="/quote" method="POST" data-validate>
+        <input type="hidden" name="lang" value="<%= lang %>">
+
+        <div class="grid grid-2" style="gap: var(--space-4);">
+          <div class="form-group">
+            <label class="form-label"><%= t.formName %></label>
+            <input type="text" name="name" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formEmail %></label>
+            <input type="email" name="email" class="form-input" required>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap: var(--space-4);">
+          <div class="form-group">
+            <label class="form-label"><%= t.formPhone %></label>
+            <input type="tel" name="phone" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formService %></label>
+            <select name="service" class="form-select">
+              <option value="">-- <%= lang === 'vi' ? 'Chọn dịch vụ' : 'Select service' %> --</option>
+              <% t.services.forEach((service, index) => { %>
+                <option value="<%= service %>"><%= service %></option>
+              <% }) %>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap: var(--space-4);">
+          <div class="form-group">
+            <label class="form-label"><%= t.formProjectType %></label>
+            <select name="projectType" class="form-select">
+              <option value="">-- <%= lang === 'vi' ? 'Chọn loại công trình' : 'Select project type' %> --</option>
+              <% t.projectTypes.forEach((type) => { %>
+                <option value="<%= type %>"><%= type %></option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formLocation %></label>
+            <input type="text" name="location" class="form-input">
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap: var(--space-4);">
+          <div class="form-group">
+            <label class="form-label"><%= t.formArea %></label>
+            <input type="number" name="area" class="form-input" placeholder="m²">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formBudget %></label>
+            <select name="budget" class="form-select">
+              <option value="">-- <%= lang === 'vi' ? 'Chọn ngân sách' : 'Select budget' %> --</option>
+              <% t.budgets.forEach((budget) => { %>
+                <option value="<%= budget %>"><%= budget %></option>
+              <% }) %>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label"><%= t.formTimeline %></label>
+          <select name="timeline" class="form-select">
+            <option value="">-- <%= lang === 'vi' ? 'Chọn thời gian' : 'Select timeline' %> --</option>
+            <% t.timelines.forEach((timeline) => { %>
+              <option value="<%= timeline %>"><%= timeline %></option>
+            <% }) %>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label"><%= t.formDetails %></label>
+          <textarea name="details" class="form-textarea" placeholder="<%= t.formDetailsPlaceholder %>"></textarea>
+        </div>
+
+        <p style="font-size: var(--text-sm); color: var(--color-gray-500); margin-bottom: var(--space-6);"><%= t.note %></p>
+
+        <div class="form-notification"></div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+          <%= t.formSubmit %>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us for Quote -->
+<section class="section" style="background: var(--color-light);">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-header-title"><%= lang === 'vi' ? 'Tại sao chọn HICONIQUE?' : 'Why Choose HICONIQUE?' %></h2>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h4 class="service-title"><%= lang === 'vi' ? 'Phản hồi nhanh' : 'Quick Response' %></h4>
+        <p class="service-desc"><%= lang === 'vi' ? 'Nhận báo giá trong vòng 24 giờ' : 'Get quote within 24 hours' %></p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-file-invoice-dollar"></i>
+        </div>
+        <h4 class="service-title"><%= lang === 'vi' ? 'Báo giá minh bạch' : 'Transparent Quote' %></h4>
+        <p class="service-desc"><%= lang === 'vi' ? 'Chi phí rõ ràng, không phát sinh' : 'Clear costs, no hidden fees' %></p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h4 class="service-title"><%= lang === 'vi' ? 'Tư vấn chuyên nghiệp' : 'Professional Consultation' %></h4>
+        <p class="service-desc"><%= lang === 'vi' ? 'Đội ngũ tư vấn tận tâm' : 'Dedicated consulting team' %></p>
+      </div>
+    </div>
+  </div>
+</section>

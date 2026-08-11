@@ -1,0 +1,118 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap: var(--space-16);">
+      <!-- Contact Form -->
+      <div class="reveal-left">
+        <h2 style="margin-bottom: var(--space-8);"><%= t.formTitle %></h2>
+        <form action="/contact" method="POST" data-validate>
+          <input type="hidden" name="lang" value="<%= lang %>">
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formName %> *</label>
+            <input type="text" name="name" class="form-input" required>
+          </div>
+
+          <div class="grid grid-2" style="gap: var(--space-4);">
+            <div class="form-group">
+              <label class="form-label"><%= t.formEmail %> *</label>
+              <input type="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label"><%= t.formPhone %></label>
+              <input type="tel" name="phone" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formSubject %></label>
+            <input type="text" name="subject" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><%= t.formMessage %> *</label>
+            <textarea name="message" class="form-textarea" required></textarea>
+          </div>
+
+          <div class="form-notification"></div>
+
+          <button type="submit" class="btn btn-primary btn-lg">
+            <%= t.formSubmit %>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="reveal-right">
+        <h2 style="margin-bottom: var(--space-8);"><%= t.infoTitle %></h2>
+
+        <div style="margin-bottom: var(--space-8);">
+          <div style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div style="width: 50px; height: 50px; background: var(--color-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h4 style="margin-bottom: var(--space-2);"><%= t.address %></h4>
+              <p style="color: var(--color-gray-600);">123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div style="width: 50px; height: 50px; background: var(--color-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <h4 style="margin-bottom: var(--space-2);"><%= t.phone %></h4>
+              <p style="color: var(--color-gray-600);">+84 123 456 789</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div style="width: 50px; height: 50px; background: var(--color-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4 style="margin-bottom: var(--space-2);"><%= t.email %></h4>
+              <p style="color: var(--color-gray-600);">info@hiconique.vn</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: var(--space-4);">
+            <div style="width: 50px; height: 50px; background: var(--color-light); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div>
+              <h4 style="margin-bottom: var(--space-2);"><%= t.workingHours %></h4>
+              <p style="color: var(--color-gray-600);"><%= t.workingHoursText %></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div style="border-radius: var(--radius-lg); overflow: hidden; height: 300px; background: var(--color-light);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.509850632681!2d106.68685331526098!3d10.77226179232761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f2112345678%3A0x1234567890abcdef!2zQ-G6o25nIEjDoG5oIFZp4buHVCBCw6xuaCBDaGnhu4d0!5e0!3m2!1svi!2s!4v1645000000000!5m2!1svi!2s"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

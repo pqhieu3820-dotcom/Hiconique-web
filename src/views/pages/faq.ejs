@@ -1,0 +1,43 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+  <div class="container container-narrow">
+    <% t.faqs.forEach((faq, index) => { %>
+      <div class="faq-item <%= index === 0 ? 'active' : '' %>">
+        <div class="faq-question">
+          <span><%= faq.question %></span>
+          <i class="fas fa-chevron-down faq-icon"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p><%= faq.answer %></p>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= lang === 'vi' ? 'Câu hỏi khác?' : 'Have More Questions?' %></h2>
+      <p class="cta-text"><%= lang === 'vi' ? 'Liên hệ ngay để được tư vấn chi tiết' : 'Contact us for detailed consultation' %></p>
+      <a href="/contact?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= lang === 'vi' ? 'Liên hệ ngay' : 'Contact Now' %>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="/?lang=<%= lang %>" class="logo">
+        <span class="logo-text">HI<span class="logo-highlight">CONIQUE</span></span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="nav">
+        <a href="/?lang=<%= lang %>" class="nav-link <%= page === 'home' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Trang chủ' : 'Home' %>
+        </a>
+        <a href="/about?lang=<%= lang %>" class="nav-link <%= page === 'about' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Giới thiệu' : 'About' %>
+        </a>
+        <a href="/services?lang=<%= lang %>" class="nav-link <%= page === 'services' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Dịch vụ' : 'Services' %>
+        </a>
+        <a href="/projects?lang=<%= lang %>" class="nav-link <%= page === 'projects' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Dự án' : 'Projects' %>
+        </a>
+        <a href="/process?lang=<%= lang %>" class="nav-link <%= page === 'process' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Quy trình' : 'Process' %>
+        </a>
+        <a href="/team?lang=<%= lang %>" class="nav-link <%= page === 'team' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Đội ngũ' : 'Team' %>
+        </a>
+        <a href="/blog?lang=<%= lang %>" class="nav-link <%= page === 'blog' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Tin tức' : 'Blog' %>
+        </a>
+        <a href="/contact?lang=<%= lang %>" class="nav-link <%= page === 'contact' ? 'active' : '' %>">
+          <%= lang === 'vi' ? 'Liên hệ' : 'Contact' %>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="header-lang">
+          <a href="?lang=vi" class="lang-btn <%= lang === 'vi' ? 'active' : '' %>">VI</a>
+          <span style="color: var(--color-gray-300);">|</span>
+          <a href="?lang=en" class="lang-btn <%= lang === 'en' ? 'active' : '' %>">EN</a>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

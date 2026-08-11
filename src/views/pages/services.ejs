@@ -1,0 +1,67 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Services List -->
+<section class="section">
+  <div class="container">
+    <% services.forEach((service, index) => { %>
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-16); margin-bottom: var(--space-16);">
+        <div class="<%= index % 2 === 0 ? 'reveal-left' : 'reveal-right' %>">
+          <div class="service-icon" style="width: 100px; height: 100px; margin-bottom: var(--space-6);">
+            <% if (service.icon === 'building') { %>
+              <i class="fas fa-building" style="font-size: 40px;"></i>
+            <% } else if (service.icon === 'sofa') { %>
+              <i class="fas fa-couch" style="font-size: 40px;"></i>
+            <% } else if (service.icon === 'hammer') { %>
+              <i class="fas fa-hammer" style="font-size: 40px;"></i>
+            <% } else if (service.icon === 'tools') { %>
+              <i class="fas fa-tools" style="font-size: 40px;"></i>
+            <% } else if (service.icon === 'clipboard') { %>
+              <i class="fas fa-clipboard-list" style="font-size: 40px;"></i>
+            <% } else { %>
+              <i class="fas fa-key" style="font-size: 40px;"></i>
+            <% } %>
+          </div>
+          <h2 style="margin-bottom: var(--space-4);"><%= service.name[lang] %></h2>
+          <p style="color: var(--color-gray-600); margin-bottom: var(--space-6);"><%= service.shortDesc[lang] %></p>
+          <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed);"><%= service.description[lang] %></p>
+
+          <ul style="margin-top: var(--space-6);">
+            <% service.features[lang].forEach(feature => { %>
+              <li style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3);">
+                <i class="fas fa-check-circle" style="color: var(--color-accent);"></i>
+                <span><%= feature %></span>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="<%= index % 2 === 0 ? 'reveal-right' : 'reveal-left' %>">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="<%= service.name[lang] %>" style="border-radius: var(--radius-lg);">
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= t.ctaTitle %></h2>
+      <p class="cta-text"><%= t.ctaSubtitle %></p>
+      <a href="/quote?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= t.ctaButton %>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

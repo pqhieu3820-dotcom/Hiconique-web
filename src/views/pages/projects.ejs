@@ -1,0 +1,58 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Projects Filter -->
+<section class="section">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all"><%= t.filterAll %></button>
+      <button class="filter-tab" data-filter="villa"><%= t.filterVilla %></button>
+      <button class="filter-tab" data-filter="apartment"><%= t.filterApartment %></button>
+      <button class="filter-tab" data-filter="office"><%= t.filterOffice %></button>
+      <button class="filter-tab" data-filter="restaurant"><%= t.filterRestaurant %></button>
+      <button class="filter-tab" data-filter="hotel"><%= t.filterHotel %></button>
+      <button class="filter-tab" data-filter="retail"><%= t.filterRetail %></button>
+    </div>
+
+    <div class="grid grid-3">
+      <% projects.forEach((project) => { %>
+        <div class="project-card reveal" data-category="<%= project.category %>">
+          <a href="/projects/<%= project.slug %>?lang=<%= lang %>">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="<%= project.name[lang] %>">
+              <div class="project-overlay"></div>
+            </div>
+            <div class="project-content">
+              <span class="project-category"><%= project.category %></span>
+              <h3 class="project-title"><%= project.name[lang] %></h3>
+              <p class="project-location"><i class="fas fa-map-marker-alt"></i> <%= project.location[lang] %></p>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= t.ctaTitle %></h2>
+      <p class="cta-text"><%= t.ctaSubtitle %></p>
+      <a href="/quote?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= t.ctaButton %>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

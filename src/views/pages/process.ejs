@@ -1,0 +1,44 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap: var(--space-8);">
+      <% t.steps.forEach((step, index) => { %>
+        <div class="process-step reveal">
+          <div class="process-number"><%= step.number %></div>
+          <% if (index < t.steps.length - 1) { %>
+            <div class="process-line"></div>
+          <% } %>
+          <h4 class="process-title"><%= step.title %></h4>
+          <p class="process-desc"><%= step.description %></p>
+          <span class="process-duration"><i class="fas fa-clock"></i> <%= step.duration %></span>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= t.ctaTitle %></h2>
+      <p class="cta-text"><%= t.ctaSubtitle %></p>
+      <a href="/quote?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= t.ctaButton %>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

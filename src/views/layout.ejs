@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="<%= typeof lang !== 'undefined' ? lang : 'vi' %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title><%= typeof title !== 'undefined' ? title : 'HICONIQUE' %></title>
+  <meta name="description" content="HICONIQUE - Công ty thiết kế và xây dựng cao cấp. Thiết kế kiến trúc, nội thất, thi công trọn gói với chất lượng đẳng cấp.">
+  <meta name="keywords" content="thiết kế kiến trúc, thiết kế nội thất, xây dựng, cải tạo, HICONIQUE, luxury design, architecture, interior design">
+  <meta name="author" content="HICONIQUE">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'HICONIQUE' %>">
+  <meta property="og:description" content="HICONIQUE - Công ty thiết kế và xây dựng cao cấp">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hiconique.vn">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <%- typeof bodyContent !== 'undefined' ? bodyContent : '' %>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/contact-widget') %>
+
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

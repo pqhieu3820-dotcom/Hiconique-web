@@ -1,0 +1,49 @@
+<div class="contact-widget">
+  <!-- Phone -->
+  <a href="tel:+84123456789" class="contact-btn phone" aria-label="Gọi điện">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+
+  <!-- Zalo -->
+  <a href="https://zalo.me/123456789" target="_blank" class="contact-btn zalo" aria-label="Chat Zalo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.000 2C6.477 2 2 6.477 2 12c0 1.82.487 3.53 1.338 5.01L2 22l5.177-1.415C8.388 21.153 10.153 21.89 12 21.89c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.5c-1.505 0-2.92-.403-4.138-1.135l-.295-.17-3.067.8.795-3.047-.19-.29C4.367 14.73 3.85 13.4 3.85 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.5-6c0-2.485-2.015-4.5-4.5-4.5S7.5 7.515 7.5 10s2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5zm-2.5-3.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/>
+    </svg>
+  </a>
+
+  <!-- Messenger -->
+  <a href="https://m.me/hiconique" target="_blank" class="contact-btn messenger" aria-label="Chat Messenger">
+    <i class="fab fa-facebook-messenger"></i>
+  </a>
+</div>
+
+<style>
+.back-to-top {
+  position: fixed;
+  bottom: 140px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition);
+  z-index: var(--z-fixed);
+}
+
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--color-secondary);
+  transform: translateY(-3px);
+}
+</style>

@@ -1,0 +1,52 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Blog Grid -->
+<section class="section">
+  <div class="container">
+    <div class="filter-tabs">
+      <a href="?lang=<%= lang %>&category=all" class="filter-tab <%= currentCategory === 'all' ? 'active' : '' %>"><%= t.filterAll %></a>
+      <a href="?lang=<%= lang %>&category=news" class="filter-tab <%= currentCategory === 'news' ? 'active' : '' %>"><%= t.filterNews %></a>
+      <a href="?lang=<%= lang %>&category=design" class="filter-tab <%= currentCategory === 'design' ? 'active' : '' %>"><%= t.filterDesign %></a>
+      <a href="?lang=<%= lang %>&category=tips" class="filter-tab <%= currentCategory === 'tips' ? 'active' : '' %>"><%= t.filterTips %></a>
+      <a href="?lang=<%= lang %>&category=trends" class="filter-tab <%= currentCategory === 'trends' ? 'active' : '' %>"><%= t.filterTrends %></a>
+    </div>
+
+    <div class="grid grid-3">
+      <% posts.forEach((post) => { %>
+        <div class="blog-card reveal">
+          <a href="/blog/<%= post.slug %>?lang=<%= lang %>">
+            <div class="blog-image">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="<%= post.title[lang] %>">
+              <span class="blog-category"><%= post.category %></span>
+            </div>
+            <div class="blog-content">
+              <span class="blog-date"><%= post.date %></span>
+              <h3 class="blog-title"><%= post.title[lang] %></h3>
+              <p class="blog-excerpt"><%= post.excerpt[lang] %></p>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+
+    <% if (totalPages > 1) { %>
+      <div class="pagination">
+        <% for (let i = 1; i <= totalPages; i++) { %>
+          <a href="?lang=<%= lang %>&category=<%= currentCategory %>&page=<%= i %>" class="pagination-item <%= currentPage === i ? 'active' : '' %>">
+            <%= i %>
+          </a>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+</section>

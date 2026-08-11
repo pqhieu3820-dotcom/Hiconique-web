@@ -1,0 +1,168 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Brand Story -->
+<section class="section" style="background: var(--color-light);">
+  <div class="container">
+    <div class="section-header" style="text-align: center; max-width: 800px; margin: 0 auto var(--space-16);">
+      <span class="section-header-subtitle"><%= lang === 'vi' ? 'Câu chuyện thương hiệu' : 'Brand Story' %></span>
+      <h2 class="section-header-title">HICONIQUE <%= lang === 'vi' ? '– KHI ĐỘC BẢN LÀ TIÊU CHUẨN DUY NHẤT' : '– WHEN UNIQUENESS IS THE ONLY STANDARD' %></h2>
+    </div>
+
+    <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+      <div class="reveal-left">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="HICONIQUE Architecture" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+      </div>
+      <div class="reveal-right">
+        <% if (lang === 'vi') { %>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">
+          Trong thế giới nơi mọi thứ dường như đều có thể sao chép, HICONIQUE ra đời với một sứ mệnh khác biệt: kiến tạo những không gian độc bản, nơi mỗi đường nét đều kể câu chuyện riêng.
+        </p>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">
+          Chúng tôi không chỉ thiết kế. Chúng tôi điêu khắc cảm xúc. Mỗi công trình là một tác phẩm nghệ thuật được kiến tạo từ tầm nhìn của gia chủ, kết hợp với bàn tay tài hoa của đội ngũ kiến trúc sư và nghệ nhân HICONIQUE.
+        </p>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed);">
+          Từ những biệt thự sang trọng đến những không gian sống hiện đại, chúng tôi mang đến sự hoàn hảo trong từng chi tiết, sự tinh tế trong từng lựa chọn. Bởi với HICONIQUE, xây dựng không chỉ là nghề mà là đam mê, là nghệ thuật, là di sản.
+        </p>
+        <% } else { %>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">
+          In a world where everything seems replicable, HICONIQUE was born with a different mission: crafting unique spaces where every line tells its own story.
+        </p>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed); margin-bottom: var(--space-6);">
+          We don't just design. We sculpt emotions. Each project is a masterpiece crafted from the homeowner's vision, combined with the skilled hands of HICONIQUE's architects and artisans.
+        </p>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed);">
+          From luxurious villas to modern living spaces, we deliver perfection in every detail, sophistication in every choice. Because at HICONIQUE, building is not just a profession but a passion, an art, a legacy.
+        </p>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Content -->
+<section class="section">
+  <div class="container">
+    <!-- History -->
+    <div class="grid grid-2" style="align-items: center; gap: var(--space-16);">
+      <div class="reveal-left">
+        <span class="section-header-subtitle"><%= t.historyTitle %></span>
+        <h2 style="margin-bottom: var(--space-6);"><%= lang === 'vi' ? 'Lịch sử phát triển' : 'Our History' %></h2>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed);"><%= t.historyContent %></p>
+      </div>
+      <div class="reveal-right">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="HICONIQUE Office" style="border-radius: var(--radius-lg);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="section" style="background: var(--color-light);">
+  <div class="container">
+    <div class="grid grid-2" style="gap: var(--space-12);">
+      <!-- Vision -->
+      <div class="reveal">
+        <div style="width: 60px; height: 3px; background: var(--color-accent); margin-bottom: var(--space-6);"></div>
+        <h3 style="margin-bottom: var(--space-4);"><%= t.visionTitle %></h3>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed);"><%= t.visionContent %></p>
+      </div>
+
+      <!-- Mission -->
+      <div class="reveal">
+        <div style="width: 60px; height: 3px; background: var(--color-accent); margin-bottom: var(--space-6);"></div>
+        <h3 style="margin-bottom: var(--space-4);"><%= t.missionTitle %></h3>
+        <p style="color: var(--color-gray-600); line-height: var(--leading-relaxed);"><%= t.missionContent %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header-subtitle"><%= lang === 'vi' ? 'Giá trị cốt lõi' : 'Core Values' %></span>
+      <h2 class="section-header-title"><%= t.valuesTitle %></h2>
+    </div>
+
+    <div class="grid grid-4">
+      <% t.values.forEach((value, index) => { %>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <% if (index === 0) { %>
+              <i class="fas fa-star"></i>
+            <% } else if (index === 1) { %>
+              <i class="fas fa-lightbulb"></i>
+            <% } else if (index === 2) { %>
+              <i class="fas fa-heart"></i>
+            <% } else { %>
+              <i class="fas fa-briefcase"></i>
+            <% } %>
+          </div>
+          <h4 class="service-title"><%= value.title %></h4>
+          <p class="service-desc"><%= value.desc %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- Team Preview -->
+<section class="section" style="background: var(--color-light);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header-subtitle"><%= lang === 'vi' ? 'Đội ngũ' : 'Team' %></span>
+      <h2 class="section-header-title"><%= t.teamTitle %></h2>
+      <p class="section-header-text"><%= t.teamSubtitle %></p>
+    </div>
+
+    <div class="grid grid-4">
+      <% team.forEach((member) => { %>
+        <div class="team-card reveal">
+          <div class="team-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="<%= member.name %>">
+            <div class="team-social">
+              <a href="<%= member.social.linkedin %>" class="btn btn-icon btn-white" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="<%= member.social.facebook %>" class="btn btn-icon btn-white" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+          <h4 class="team-name"><%= member.name %></h4>
+          <p class="team-position"><%= member.position[lang] %></p>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/team?lang=<%= lang %>" class="btn btn-primary">
+        <%= lang === 'vi' ? 'Xem đội ngũ' : 'View Team' %>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= lang === 'vi' ? 'Cùng HICONIQUE kiến tạo không gian mơ ước' : 'Create Your Dream Space with HICONIQUE' %></h2>
+      <p class="cta-text"><%= lang === 'vi' ? 'Liên hệ ngay để được tư vấn miễn phí' : 'Contact us for a free consultation' %></p>
+      <a href="/contact?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= lang === 'vi' ? 'Liên hệ ngay' : 'Contact Now' %>
+      </a>
+    </div>
+  </div>
+</section>

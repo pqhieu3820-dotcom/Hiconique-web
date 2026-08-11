@@ -1,0 +1,30 @@
+{
+  "name": "hiconique-web",
+  "version": "1.0.0",
+  "description": "HICONIQUE - Luxury Construction & Design Company Website",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "hiconique",
+    "architecture",
+    "interior design",
+    "construction",
+    "luxury"
+  ],
+  "author": "HICONIQUE",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "dotenv": "^16.3.1",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

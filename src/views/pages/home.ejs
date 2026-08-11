@@ -1,0 +1,169 @@
+<%- include('../partials/header') %>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" alt="Luxury Architecture">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-subtitle">HICONIQUE</span>
+      <h1 class="hero-title"><%= t.heroTitle %></h1>
+      <p class="hero-text"><%= t.heroSubtitle %></p>
+      <div class="hero-buttons">
+        <a href="/projects?lang=<%= lang %>" class="btn btn-primary btn-lg">
+          <%= t.heroCTA %>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="/contact?lang=<%= lang %>" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+          <%= t.heroCTA2 %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header-subtitle"><%= lang === 'vi' ? 'Dịch vụ' : 'Services' %></span>
+      <h2 class="section-header-title"><%= t.servicesTitle %></h2>
+      <p class="section-header-text"><%= t.servicesSubtitle %></p>
+    </div>
+
+    <div class="grid grid-3">
+      <% services.forEach((service, index) => { %>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <% if (service.icon === 'building') { %>
+              <i class="fas fa-building"></i>
+            <% } else if (service.icon === 'sofa') { %>
+              <i class="fas fa-couch"></i>
+            <% } else if (service.icon === 'hammer') { %>
+              <i class="fas fa-hammer"></i>
+            <% } else if (service.icon === 'tools') { %>
+              <i class="fas fa-tools"></i>
+            <% } else if (service.icon === 'clipboard') { %>
+              <i class="fas fa-clipboard-list"></i>
+            <% } else { %>
+              <i class="fas fa-key"></i>
+            <% } %>
+          </div>
+          <h3 class="service-title"><%= service.name[lang] %></h3>
+          <p class="service-desc"><%= service.shortDesc[lang] %></p>
+          <a href="/services?lang=<%= lang %>" class="service-link">
+            <%= lang === 'vi' ? 'Xem chi tiết' : 'View Details' %>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/services?lang=<%= lang %>" class="btn btn-outline">
+        <%= lang === 'vi' ? 'Xem tất cả dịch vụ' : 'View All Services' %>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="section" style="background: var(--color-light);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header-subtitle"><%= lang === 'vi' ? 'Dự án' : 'Projects' %></span>
+      <h2 class="section-header-title"><%= t.projectsTitle %></h2>
+      <p class="section-header-text"><%= t.projectsSubtitle %></p>
+    </div>
+
+    <div class="grid grid-3">
+      <% projects.forEach((project) => { %>
+        <div class="project-card reveal">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="<%= project.name[lang] %>">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <span class="project-category"><%= project.category %></span>
+            <h3 class="project-title"><%= project.name[lang] %></h3>
+            <p class="project-location"><i class="fas fa-map-marker-alt"></i> <%= project.location[lang] %></p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/projects?lang=<%= lang %>" class="btn btn-primary">
+        <%= lang === 'vi' ? 'Xem tất cả dự án' : 'View All Projects' %>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-header-subtitle"><%= lang === 'vi' ? 'Tại sao chọn HICONIQUE' : 'Why Choose Us' %></span>
+      <h2 class="section-header-title"><%= t.whyTitle %></h2>
+      <p class="section-header-text"><%= t.whySubtitle %></p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h4 class="why-title"><%= lang === 'vi' ? 'Chất lượng đảm bảo' : 'Quality Assured' %></h4>
+        <p class="why-desc"><%= lang === 'vi' ? 'Cam kết chất lượng cao nhất với vật liệu và thi công chuẩn mực.' : 'Highest quality commitment with standard materials and construction.' %></p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h4 class="why-title"><%= lang === 'vi' ? 'Đúng tiến độ' : 'On Time' %></h4>
+        <p class="why-desc"><%= lang === 'vi' ? 'Hoàn thành đúng hạn, đảm bảo kế hoạch của bạn không bị gián đoạn.' : 'Completed on schedule, ensuring your plan is not disrupted.' %></p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <h4 class="why-title"><%= lang === 'vi' ? 'Thiết kế sáng tạo' : 'Creative Design' %></h4>
+        <p class="why-desc"><%= lang === 'vi' ? 'Đội ngũ kiến trúc sư tài năng, mang đến những ý tưởng độc đáo.' : 'Talented architect team, bringing unique ideas.' %></p>
+      </div>
+
+      <div class="why-card reveal">
+        <div class="why-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h4 class="why-title"><%= lang === 'vi' ? 'Tận tâm' : 'Dedicated' %></h4>
+        <p class="why-desc"><%= lang === 'vi' ? 'Lắng nghe và đáp ứng mọi nhu cầu của khách hàng.' : 'Listening and meeting all customer needs.' %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= t.ctaTitle %></h2>
+      <p class="cta-text"><%= t.ctaSubtitle %></p>
+      <a href="/quote?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= t.ctaButton %>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/contact-widget') %>

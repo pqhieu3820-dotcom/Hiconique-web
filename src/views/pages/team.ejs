@@ -1,0 +1,62 @@
+<%
+const pageTitle = title;
+%>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title"><%= t.heroTitle %></h1>
+    <p class="page-hero-subtitle"><%= t.heroSubtitle %></p>
+  </div>
+</section>
+
+<!-- Team Grid -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+      <% team.forEach((member) => { %>
+        <div class="team-card reveal">
+          <div class="team-image">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="<%= member.name %>">
+            <div class="team-social">
+              <% if (member.social.linkedin) { %>
+                <a href="<%= member.social.linkedin %>" class="btn btn-icon btn-white" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              <% } %>
+              <% if (member.social.facebook) { %>
+                <a href="<%= member.social.facebook %>" class="btn btn-icon btn-white" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              <% } %>
+            </div>
+          </div>
+          <h4 class="team-name"><%= member.name %></h4>
+          <p class="team-position"><%= member.position[lang] %></p>
+          <p style="font-size: var(--text-sm); color: var(--color-gray-600); margin-top: var(--space-4);"><%= member.bio[lang].substring(0, 150) %>...</p>
+          <div style="margin-top: var(--space-4); display: flex; gap: var(--space-4); justify-content: center;">
+            <a href="mailto:<%= member.email %>" class="btn btn-sm btn-outline">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:<%= member.phone %>" class="btn btn-sm btn-outline">
+              <i class="fas fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title"><%= lang === 'vi' ? 'Gặp gỡ đội ngũ HICONIQUE' : 'Meet the HICONIQUE Team' %></h2>
+      <p class="cta-text"><%= lang === 'vi' ? 'Hãy liên hệ để được tư vấn bởi những chuyên gia hàng đầu' : 'Contact us for consultation from leading experts' %></p>
+      <a href="/contact?lang=<%= lang %>" class="btn btn-white btn-lg">
+        <%= lang === 'vi' ? 'Liên hệ ngay' : 'Contact Now' %>
+      </a>
+    </div>
+  </div>
+</section>

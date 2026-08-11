@@ -1,0 +1,92 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          HI<span>CONIQUE</span>
+        </div>
+        <p class="footer-desc">
+          <%= lang === 'vi'
+            ? 'HICONIQUE - Công ty thiết kế và xây dựng cao cấp hàng đầu. Chúng tôi kiến tạo những không gian sống đẳng cấp, nơi tầm nhìn trở thành di sản.'
+            : 'HICONIQUE - Leading luxury design and construction company. We create prestigious living spaces where vision becomes legacy.'
+          %>
+        </p>
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h4 class="footer-title"><%= lang === 'vi' ? 'Liên kết nhanh' : 'Quick Links' %></h4>
+        <ul class="footer-links">
+          <li><a href="/about?lang=<%= lang %>"><%= lang === 'vi' ? 'Giới thiệu' : 'About Us' %></a></li>
+          <li><a href="/services?lang=<%= lang %>"><%= lang === 'vi' ? 'Dịch vụ' : 'Services' %></a></li>
+          <li><a href="/projects?lang=<%= lang %>"><%= lang === 'vi' ? 'Dự án' : 'Projects' %></a></li>
+          <li><a href="/process?lang=<%= lang %>"><%= lang === 'vi' ? 'Quy trình' : 'Process' %></a></li>
+          <li><a href="/team?lang=<%= lang %>"><%= lang === 'vi' ? 'Đội ngũ' : 'Team' %></a></li>
+          <li><a href="/blog?lang=<%= lang %>"><%= lang === 'vi' ? 'Tin tức' : 'Blog' %></a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-column">
+        <h4 class="footer-title"><%= lang === 'vi' ? 'Dịch vụ' : 'Services' %></h4>
+        <ul class="footer-links">
+          <li><a href="/services?lang=<%= lang %>"><%= lang === 'vi' ? 'Thiết kế kiến trúc' : 'Architectural Design' %></a></li>
+          <li><a href="/services?lang=<%= lang %>"><%= lang === 'vi' ? 'Thiết kế nội thất' : 'Interior Design' %></a></li>
+          <li><a href="/services?lang=<%= lang %>"><%= lang === 'vi' ? 'Thi công xây dựng' : 'Construction' %></a></li>
+          <li><a href="/services?lang=<%= lang %>"><%= lang === 'vi' ? 'Cải tạo và nâng cấp' : 'Renovation' %></a></li>
+          <li><a href="/services?lang=<%= lang %>"><%= lang === 'vi' ? 'Tư vấn và giám sát' : 'Consulting' %></a></li>
+          <li><a href="/quote?lang=<%= lang %>"><%= lang === 'vi' ? 'Thiết kế và thi công trọn gói' : 'Design & Build' %></a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-column">
+        <h4 class="footer-title"><%= lang === 'vi' ? 'Liên hệ' : 'Contact' %></h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Nguyễn Trãi, Quận 1, TP.HCM</span>
+          </li>
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <span>+84 123 456 789</span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <span>info@hiconique.vn</span>
+          </li>
+          <li>
+            <i class="fas fa-clock"></i>
+            <span><%= lang === 'vi' ? 'Thứ 2 - Thứ 7: 8:00 - 18:00' : 'Mon - Sat: 8:00 AM - 6:00 PM' %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; 2024 HICONIQUE. <%= lang === 'vi' ? 'Tất cả quyền được bảo lưu.' : 'All rights reserved.' %>
+      </p>
+      <div class="footer-legal">
+        <a href="/privacy?lang=<%= lang %>"><%= lang === 'vi' ? 'Chính sách bảo mật' : 'Privacy Policy' %></a>
+        <a href="/terms?lang=<%= lang %>"><%= lang === 'vi' ? 'Điều khoản sử dụng' : 'Terms of Service' %></a>
+      </div>
+    </div>
+  </div>
+</footer>
